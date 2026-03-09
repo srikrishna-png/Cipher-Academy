@@ -3,6 +3,9 @@ import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
+import { NavProvider } from "@/components/layout/NavProvider";
+import { MobileSidebar } from "@/components/layout/MobileSidebar";
+import { SiteWrapper } from "@/components/layout/SiteWrapper";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,16 +29,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${firaCode.variable} antialiased`}>
+      <body className={`${inter.variable} ${firaCode.variable} antialiased bg-black`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <SmoothScrollProvider>
-            {children}
-          </SmoothScrollProvider>
+          <NavProvider>
+            <MobileSidebar />
+            <SiteWrapper>
+              <SmoothScrollProvider>
+                {children}
+              </SmoothScrollProvider>
+            </SiteWrapper>
+          </NavProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -6,7 +6,7 @@ export default function SteganographyLearnPage() {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 uppercase-headers">
             <div className="flex items-center gap-4 mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">12</span>
-                <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 12 — Steganography</h4>
+                <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 12 — Steganography</h4>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-8">Steganography: Hidden in Plain Sight</h1>
@@ -24,7 +24,7 @@ export default function SteganographyLearnPage() {
                 <h4 className="font-mono font-bold text-primary mb-4">🎨 How it Works (Pixels)</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground dark:text-foreground/80">
                             A single pixel is made of Red, Green, and Blue (RGB) values, usually 0-255 (8 bits each).
                         </p>
                         <div className="p-4 bg-black/40 rounded-lg font-mono text-xs space-y-2 border border-white/5">
@@ -56,21 +56,21 @@ export default function SteganographyLearnPage() {
                         <div className="flex gap-4">
                             <span className="text-xs font-bold text-primary opacity-50">01</span>
                             <div>
-                                <p className="text-xs font-bold text-white mb-1">BITSTREAM CONVERSION</p>
+                                <p className="text-xs font-bold text-foreground dark:text-white mb-1">BITSTREAM CONVERSION</p>
                                 <p className="text-[10px] text-muted-foreground">The secret message is converted into a continuous stream of bits (0s and 1s).</p>
                             </div>
                         </div>
                         <div className="flex gap-4 border-t border-white/5 pt-3">
                             <span className="text-xs font-bold text-primary opacity-50">02</span>
                             <div>
-                                <p className="text-xs font-bold text-white mb-1">PIXEL GRID SCAN</p>
+                                <p className="text-xs font-bold text-foreground dark:text-white mb-1">PIXEL GRID SCAN</p>
                                 <p className="text-[10px] text-muted-foreground">The cover image is processed pixel-by-pixel, starting from (0,0).</p>
                             </div>
                         </div>
                         <div className="flex gap-4 border-t border-white/5 pt-3">
                             <span className="text-xs font-bold text-primary opacity-50">03</span>
                             <div>
-                                <p className="text-xs font-bold text-white mb-1">LSB REPLACEMENT</p>
+                                <p className="text-xs font-bold text-foreground dark:text-white mb-1">LSB REPLACEMENT</p>
                                 <p className="text-[10px] text-muted-foreground">The R, G, or B channel's last bit is swapped with the next bit from our secret stream.</p>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ export default function SteganographyLearnPage() {
                         </div>
 
                         <div className="pt-4 border-t border-white/10 space-y-3">
-                            <h5 className="text-[10px] font-bold text-white uppercase tracking-widest">Logic: Pixel Payload</h5>
+                            <h5 className="text-[10px] font-bold text-foreground dark:text-white uppercase tracking-widest">Logic: Pixel Payload</h5>
                             <div className="bg-black/40 p-3 rounded-lg font-mono text-[9px] text-primary/70">
                                 <p>// Max Secret Length (Bytes)</p>
                                 <p>const capacity = (pxWidth * pxHeight * 3) / 8;</p>
@@ -115,7 +115,7 @@ export default function SteganographyLearnPage() {
                 <EyeOff className="text-red-500 shrink-0" size={24} />
                 <div>
                     <h4 className="text-red-400 font-mono font-bold mb-1">⚠️ Format Sensitivity</h4>
-                    <p className="text-[10px] text-foreground/80">
+                    <p className="text-[10px] text-muted-foreground dark:text-foreground/80">
                         Steganography is fragile. Saving an image as a <strong>JPEG</strong> will destroy the hidden bits due to lossy compression. Always use <strong>PNG</strong> or <strong>BMP</strong> to preserve every pixel exactly.
                     </p>
                 </div>
@@ -129,7 +129,7 @@ export default function SteganographyLearnPage() {
                 </div>
                 <div className="flex-1">
                     <h3 className="text-xl font-bold text-white mb-2 font-mono">Ready for the Final Test?</h3>
-                    <p className="text-sm text-foreground/80">
+                    <p className="text-sm text-muted-foreground dark:text-foreground/80">
                         You've mastered all the core modules. Now put your skills to the ultimate test in the cryptographic escape room.
                     </p>
                 </div>

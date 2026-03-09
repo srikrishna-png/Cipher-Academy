@@ -7,7 +7,7 @@ export default function AsymmetricPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
       <div className="flex items-center gap-4 mb-4">
         <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">06</span>
-        <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 6 — Asymmetric Cryptography</h4>
+        <h4 className="text-accent font-mono tracking-widest uppercase m-0">Module 6 — Asymmetric Encryption</h4>
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold mb-8">Public-Key Cryptography</h1>
@@ -57,7 +57,7 @@ export default function AsymmetricPage() {
           <h4 className="font-bold font-mono text-accent mb-3 flex items-center gap-2">
             <Key size={18} /> RSA Algorithm
           </h4>
-          <p className="text-sm text-foreground/80 mb-4">The first public-key system. Security is based on the difficulty of factoring large integers.</p>
+          <p className="text-sm text-muted-foreground dark:text-foreground/80 mb-4">The first public-key system. Security is based on the difficulty of factoring large integers.</p>
           <div className="space-y-2 opacity-80 font-mono text-[10px]">
             <div className="flex justify-between"><span>Primary Strength:</span><span>Large Prime Math</span></div>
             <div className="flex justify-between"><span>Legacy Usage:</span><span>PGP, SSL, SSH</span></div>
@@ -73,7 +73,7 @@ export default function AsymmetricPage() {
           <h4 className="font-bold font-mono text-primary mb-3 flex items-center gap-2">
             <Key size={18} /> ECDSA / ECC
           </h4>
-          <p className="text-sm text-foreground/80 mb-4">Elliptic Curve Digital Signature Algorithm. Smaller keys, higher efficiency, same security.</p>
+          <p className="text-sm text-muted-foreground dark:text-foreground/80 mb-4">Elliptic Curve Digital Signature Algorithm. Smaller keys, higher efficiency, same security.</p>
           <div className="space-y-2 opacity-80 font-mono text-[10px]">
             <div className="flex justify-between"><span>Primary Strength:</span><span>Curve Point Ops</span></div>
             <div className="flex justify-between"><span>Modern Usage:</span><span>TLS 1.3, Bitcoin, Signal</span></div>
@@ -98,7 +98,7 @@ export default function AsymmetricPage() {
 
       <div className="not-prose bg-muted border border-border p-6 rounded-xl my-6 font-mono text-sm">
         <h4 className="text-accent font-bold mb-4">⚡ RSA Key Generation (Simplified)</h4>
-        <ol className="space-y-3 text-foreground/80 list-decimal pl-5">
+        <ol className="space-y-3 text-muted-foreground dark:text-foreground/80 list-decimal pl-5">
           <li>Pick two large prime numbers: <span className="text-primary">p = 61, q = 53</span></li>
           <li>Compute n = p × q: <span className="text-primary">n = 3233</span> (the modulus, public)</li>
           <li>Compute Euler's totient: <span className="text-primary">φ(n) = (p−1)(q−1) = 3120</span></li>
@@ -237,7 +237,7 @@ export default function AsymmetricPage() {
         Quantum computers running <strong>Shor's Algorithm</strong> can solve both the integer factorization and elliptic curve discrete logarithm problems in polynomial time — theoretically breaking RSA and ECC. A sufficiently powerful quantum computer would render modern internet encryption obsolete.
       </p>
       <div className="not-prose bg-orange-500/10 border border-orange-500/30 p-5 rounded-xl my-4">
-        <p className="text-sm text-foreground/80">
+        <p className="text-sm text-muted-foreground dark:text-foreground/80">
           <strong className="text-orange-400">NIST is ready:</strong> In 2024, NIST finalized the first post-quantum cryptography standards, including <strong>ML-KEM (Kyber)</strong> for key exchange and <strong>ML-DSA (Dilithium)</strong> for digital signatures. These algorithms are based on lattice problems that quantum computers cannot efficiently solve. Major tech companies are already beginning migration.
         </p>
       </div>

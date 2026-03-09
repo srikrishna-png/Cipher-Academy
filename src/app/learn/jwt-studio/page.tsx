@@ -6,7 +6,7 @@ export default function JWTStudioPage() {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center gap-4 mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">09</span>
-                <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 9 — JWT Studio</h4>
+                <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 9 — JWT Studio</h4>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-8">JWT Studio: Token Architecture</h1>
@@ -31,7 +31,7 @@ export default function JWTStudioPage() {
                                 <span className="text-accent font-bold text-xs">P.1</span>
                             </div>
                             <div>
-                                <h5 className="font-bold text-xs uppercase text-white mb-1">State Vectorization</h5>
+                                <h5 className="font-bold text-xs uppercase text-foreground dark:text-white mb-1">State Vectorization</h5>
                                 <p className="text-[10px] text-muted-foreground leading-relaxed">
                                     We take the JavaScript object (Claims) and stringify it. This JSON string is then converted into a UTF-8 Byte Array.
                                 </p>
@@ -42,7 +42,7 @@ export default function JWTStudioPage() {
                                 <span className="text-accent font-bold text-xs">P.2</span>
                             </div>
                             <div>
-                                <h5 className="font-bold text-xs uppercase text-white mb-1">Base64URL Compaction</h5>
+                                <h5 className="font-bold text-xs uppercase text-foreground dark:text-white mb-1">Base64URL Compaction</h5>
                                 <p className="text-[10px] text-muted-foreground leading-relaxed">
                                     Unlike standard Base64, we remove padding (<code>=</code>) and replace <code>+</code>/<code>/</code> to ensure the token doesn't break URL structures.
                                 </p>
@@ -53,7 +53,7 @@ export default function JWTStudioPage() {
                                 <span className="text-accent font-bold text-xs">P.3</span>
                             </div>
                             <div>
-                                <h5 className="font-bold text-xs uppercase text-white mb-1">Signing Pass</h5>
+                                <h5 className="font-bold text-xs uppercase text-foreground dark:text-white mb-1">Signing Pass</h5>
                                 <p className="text-[10px] text-muted-foreground leading-relaxed">
                                     The Header and Payload strings are concatenated. This "Data Segment" is then put through an HMAC-SHA256 or RSA-SHA256 function.
                                 </p>
@@ -63,7 +63,7 @@ export default function JWTStudioPage() {
                 </div>
 
                 <div className="bg-black/60 p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
-                    <h5 className="text-xs font-bold text-white mb-4 uppercase tracking-[0.2em] text-center">Compact Serialization Demo</h5>
+                    <h5 className="text-xs font-bold text-foreground dark:text-white mb-4 uppercase tracking-[0.2em] text-center">Compact Serialization Demo</h5>
                     <div className="bg-muted/10 p-4 rounded border border-white/5 font-mono text-[9px] text-primary/70 mb-4 animate-pulse">
                         eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9<span className="text-red-400">.</span>eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoyNTE2MjM5MDIyfQ<span className="text-red-400">.</span>SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
                     </div>
@@ -80,7 +80,7 @@ export default function JWTStudioPage() {
 
             <div className="bg-primary/5 border border-primary/20 p-8 rounded-3xl my-16 group relative overflow-hidden shadow-xl">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_-20%,rgba(16,185,129,0.1)_0%,transparent_100%)]" />
-                <h3 className="text-2xl font-bold font-mono text-white mb-6 flex items-center gap-3">
+                <h3 className="text-2xl font-bold font-mono text-foreground dark:text-white mb-6 flex items-center gap-3">
                     ⚡ Large vs Small Benchmark
                 </h3>
                 <p className="text-sm text-muted-foreground mb-8 max-w-2xl">

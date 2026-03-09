@@ -6,7 +6,7 @@ export default function DiffieHellmanPage() {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center gap-4 mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">07</span>
-                <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 7 — Diffie-Hellman</h4>
+                <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 7 — Diffie-Hellman</h4>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-8">Diffie-Hellman: The Cryptographic Handshake</h1>
@@ -29,11 +29,11 @@ export default function DiffieHellmanPage() {
                 An observer (Eve) sees Yellow, Orange, and Green, but she cannot "un-mix" them to find the secret colors or the final Brown.
             </p>
 
-            <div className="not-prose bg-black/40 border border-white/5 p-8 rounded-3xl my-16 group relative overflow-hidden shadow-xl">
+            <div className="not-prose bg-muted/20 dark:bg-black/40 border border-border dark:border-white/5 p-8 rounded-3xl my-16 group relative overflow-hidden shadow-xl">
                 <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                     <Zap size={180} className="-rotate-12 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold font-mono text-white mb-6 flex items-center gap-3">
+                <h3 className="text-2xl font-bold font-mono text-foreground dark:text-white mb-6 flex items-center gap-3">
                     <Lock className="text-primary" size={24} /> The Handshake Logic (Math)
                 </h3>
 
@@ -41,15 +41,15 @@ export default function DiffieHellmanPage() {
                     <div className="space-y-6">
                         <div className="bg-primary/5 border border-primary/20 p-5 rounded-xl">
                             <h5 className="font-bold text-xs uppercase tracking-widest text-primary mb-3">Mathematical Foundation</h5>
-                            <div className="font-mono text-sm text-white/90 space-y-2">
+                            <div className="font-mono text-sm text-foreground/90 dark:text-white/90 space-y-2">
                                 <p>Public: Prime <span className="text-primary">p</span>, Base <span className="text-primary">g</span></p>
                                 <p>Alice's Secret: <span className="text-primary">a</span></p>
                                 <p>Bob's Secret: <span className="text-primary">b</span></p>
                             </div>
                         </div>
                         <div className="bg-muted/10 border border-border p-5 rounded-xl font-mono text-xs space-y-3">
-                            <p className="text-white">Alice computes: A = g<sup>a</sup> mod p</p>
-                            <p className="text-white">Bob computes: B = g<sup>b</sup> mod p</p>
+                            <p className="text-foreground dark:text-white">Alice computes: A = g<sup>a</sup> mod p</p>
+                            <p className="text-foreground dark:text-white">Bob computes: B = g<sup>b</sup> mod p</p>
                             <div className="pt-2 border-t border-white/5">
                                 <p className="text-accent">Shared Secret = B<sup>a</sup> mod p = A<sup>b</sup> mod p</p>
                             </div>
@@ -60,15 +60,15 @@ export default function DiffieHellmanPage() {
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Implementation Breakdown</h4>
                         <div className="space-y-2">
                             <div className="p-3 bg-white/5 rounded border border-white/5 flex items-center justify-between">
-                                <span className="text-[10px] text-white">1. Parameter Agreement</span>
+                                <span className="text-[10px] text-foreground dark:text-white">1. Parameter Agreement</span>
                                 <span className="text-[10px] text-green-500 font-mono">P-256 / P-384</span>
                             </div>
                             <div className="p-3 bg-white/5 rounded border border-white/5 flex items-center justify-between">
-                                <span className="text-[10px] text-white">2. Public Key Exchange</span>
+                                <span className="text-[10px] text-foreground dark:text-white">2. Public Key Exchange</span>
                                 <span className="text-[10px] text-blue-500 font-mono">Over TCP/TLS</span>
                             </div>
                             <div className="p-3 bg-white/5 rounded border border-white/5 flex items-center justify-between">
-                                <span className="text-[10px] text-white">3. Derivation Pass (KDF)</span>
+                                <span className="text-[10px] text-foreground dark:text-white">3. Derivation Pass (KDF)</span>
                                 <span className="text-[10px] text-purple-500 font-mono">HKDF-SHA256</span>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ export default function DiffieHellmanPage() {
                 </div>
 
                 <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
-                    <h3 className="text-xl font-bold font-mono text-white mb-4">🌀 Large vs Small Benchmark</h3>
+                    <h3 className="text-xl font-bold font-mono text-foreground dark:text-white mb-4">🌀 Large vs Small Benchmark</h3>
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <div className="flex justify-between text-[10px] uppercase font-bold text-muted-foreground">

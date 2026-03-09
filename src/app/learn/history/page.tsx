@@ -6,7 +6,7 @@ export default function HistoryPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
       <div className="flex items-center gap-4 mb-4">
         <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">01</span>
-        <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 1 — History</h4>
+        <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 1 — History</h4>
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold mb-8">The Evolution of Secrecy</h1>
@@ -119,7 +119,7 @@ export default function HistoryPage() {
           ].map((item) => (
             <div key={item.event} className="flex gap-4">
               <span className="text-primary font-mono text-xs font-bold w-16 shrink-0 mt-0.5">{item.year}</span>
-              <p className="text-sm text-foreground/80">{item.event}</p>
+              <p className="text-sm text-muted-foreground dark:text-foreground/80">{item.event}</p>
             </div>
           ))}
         </div>

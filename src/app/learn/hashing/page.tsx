@@ -7,7 +7,7 @@ export default function HashingPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
       <div className="flex items-center gap-4 mb-4">
         <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">02</span>
-        <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 2 — Hashing</h4>
+        <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 2 — Hashing</h4>
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold mb-8">Cryptographic Hash Functions</h1>
@@ -43,7 +43,7 @@ export default function HashingPage() {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="bg-primary/20 text-primary px-2 py-0.5 rounded text-xs">Input A</span>
-              <code className="text-white">"cipher<span className="text-primary">a</span>cademy"</code>
+              <code className="text-foreground dark:text-white">"cipher<span className="text-primary">a</span>cademy"</code>
             </div>
             <div className="break-all text-primary bg-background p-3 rounded border border-border">
               2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
@@ -52,7 +52,7 @@ export default function HashingPage() {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="bg-red-500/20 text-red-400 px-2 py-0.5 rounded text-xs">Input B</span>
-              <code className="text-white">"cipher<span className="text-red-400">b</span>cademy"</code>
+              <code className="text-foreground dark:text-white">"cipher<span className="text-red-400">b</span>cademy"</code>
               <span className="text-xs text-red-500">← changed 'a' to 'b'</span>
             </div>
             <div className="break-all text-red-400 bg-background p-3 rounded border border-red-500/20">
@@ -76,7 +76,7 @@ export default function HashingPage() {
             <Hash size={16} /> MD5
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">Message Digest 5. Fast, 128-bit digest. High susceptibility to collision attacks.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>📦 128-bit Digest</li>
             <li>🔄 64 Rounds</li>
             <li className="text-red-500 font-bold uppercase mt-2">Status: Broken</li>
@@ -88,7 +88,7 @@ export default function HashingPage() {
             <Hash size={16} /> SHA-256
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">Part of the SHA-2 family. The backbone of Bitcoin and modern software integrity.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>📦 256-bit Digest</li>
             <li>🔄 64 Rounds</li>
             <li className="text-primary font-bold uppercase mt-2">Status: Secure</li>
@@ -100,7 +100,7 @@ export default function HashingPage() {
             <Hash size={16} /> SHA-3
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">Based on Keccak. Uses a unique "Sponge" construction for maximum logic variance.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>📦 Variable Digest</li>
             <li>🔄 24 Rounds</li>
             <li className="text-blue-400 font-bold uppercase mt-2">Status: Recommended</li>
@@ -125,7 +125,7 @@ export default function HashingPage() {
 
       <div className="not-prose bg-muted border border-border p-5 rounded-xl font-mono text-sm my-6">
         <div className="space-y-3">
-          <div><span className="text-muted-foreground">Password: </span><span className="text-white">"password123"</span></div>
+          <div><span className="text-muted-foreground">Password: </span><span className="text-foreground dark:text-white">"password123"</span></div>
           <div><span className="text-muted-foreground">Salt: </span><span className="text-yellow-400">"xB7kPq"</span> <span className="text-xs text-muted-foreground">(random per user)</span></div>
           <div className="border-t border-border pt-3">
             <span className="text-muted-foreground">SHA-256("password123" + "xB7kPq"): </span>
@@ -215,7 +215,7 @@ export default function HashingPage() {
             <div className="flex gap-4">
               <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 font-bold text-xs italic">∑</div>
               <div>
-                <h5 className="font-bold text-xs uppercase tracking-widest text-white mb-1">Shannon Equation</h5>
+                <h5 className="font-bold text-xs uppercase tracking-widest text-foreground dark:text-white mb-1">Shannon Equation</h5>
                 <p className="text-[10px] text-muted-foreground leading-relaxed italic">H = - Σ P(x) log₂ P(x)</p>
                 <p className="text-[9px] text-muted-foreground/60 mt-1">Calculates bits of uncertainty per character based on frequency distribution.</p>
               </div>
@@ -223,7 +223,7 @@ export default function HashingPage() {
             <div className="flex gap-4">
               <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 font-bold text-xs">2^N</div>
               <div>
-                <h5 className="font-bold text-xs uppercase tracking-widest text-white mb-1">Brute-Force Cost</h5>
+                <h5 className="font-bold text-xs uppercase tracking-widest text-foreground dark:text-white mb-1">Brute-Force Cost</h5>
                 <p className="text-[10px] text-muted-foreground">2<sup>Total Bits</sup> = Combinations required to crack.</p>
               </div>
             </div>

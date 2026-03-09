@@ -6,7 +6,7 @@ export default function FileConversionPage() {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center gap-4 mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">05</span>
-                <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 5 — File Conversion</h4>
+                <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 5 — File Conversion</h4>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-8">The Data Transformer: Binary & String Pipelines</h1>
@@ -24,7 +24,7 @@ export default function FileConversionPage() {
                 <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                     <Zap size={180} className="rotate-45" />
                 </div>
-                <h3 className="text-2xl font-bold font-mono text-white mb-6 flex items-center gap-3">
+                <h3 className="text-2xl font-bold font-mono text-foreground dark:text-white mb-6 flex items-center gap-3">
                     <Box className="text-primary" size={24} /> The Implementation Pipeline
                 </h3>
 
@@ -66,7 +66,7 @@ export default function FileConversionPage() {
                 </div>
 
                 <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
-                    <h3 className="text-xl font-bold font-mono text-white mb-4">🚀 Load Benchmark</h3>
+                    <h3 className="text-xl font-bold font-mono text-foreground dark:text-white mb-4">🚀 Load Benchmark</h3>
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <div className="flex justify-between text-[10px] uppercase font-bold text-muted-foreground">

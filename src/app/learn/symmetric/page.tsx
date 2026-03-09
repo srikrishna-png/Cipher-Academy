@@ -7,7 +7,7 @@ export default function SymmetricPage() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
       <div className="flex items-center gap-4 mb-4">
         <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">04</span>
-        <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 4 — Symmetric Encryption</h4>
+        <h4 className="text-primary font-mono tracking-widest uppercase m-0">Module 4 — Symmetric Encryption</h4>
       </div>
 
       <h1 className="text-4xl md:text-5xl font-bold mb-8">Symmetric Encryption</h1>
@@ -35,12 +35,7 @@ export default function SymmetricPage() {
             <Lock size={16} /> DES
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">Data Encryption Standard. Modern computers can brute-force its 56-bit key in hours.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
-            <li>🔑 56-bit Key</li>
-            <li>📦 64-bit Block</li>
-            <li>🔄 16 Rounds</li>
-            <li className="text-red-500 font-bold uppercase mt-2">Status: Broken</li>
-          </ul>
+          <li className="text-red-500 font-bold uppercase mt-2">Status: Broken</li>
         </div>
 
         <div className="bg-primary/10 border border-primary/30 rounded-xl p-5 hover:bg-primary/20 transition-colors">
@@ -48,7 +43,7 @@ export default function SymmetricPage() {
             <Shield size={16} /> AES
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">Advanced Encryption Standard. The gold standard for global security and speed.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>🔑 128/256-bit Key</li>
             <li>📦 128-bit Block</li>
             <li>🔄 10-14 Rounds</li>
@@ -61,7 +56,7 @@ export default function SymmetricPage() {
             <Shield size={16} /> 3DES
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">Triple DES. Applies DES three times with different keys to increase security.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>🔑 168-bit Key</li>
             <li>📦 64-bit Block</li>
             <li>🔄 48 Rounds</li>
@@ -74,7 +69,7 @@ export default function SymmetricPage() {
             <Lock size={16} /> RC4
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">A stream cipher once used in WEP/SSL. Famous for its speed but high biases.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>🔑 Variable Key</li>
             <li>📦 Stream-based</li>
             <li>🔄 PRGA Logic</li>
@@ -87,7 +82,7 @@ export default function SymmetricPage() {
             <Lock size={16} /> Rabbit
           </h4>
           <p className="text-[10px] text-muted-foreground mb-3 leading-tight">A high-speed stream cipher designed for high-performance software environments.</p>
-          <ul className="text-[10px] space-y-1 text-foreground/80 font-mono">
+          <ul className="text-[10px] space-y-1 text-muted-foreground dark:text-foreground/80 font-mono">
             <li>🔑 128-bit Key</li>
             <li>📦 64-bit State</li>
             <li>🔄 8 Rounds</li>
@@ -130,7 +125,7 @@ export default function SymmetricPage() {
         ].map((op) => (
           <div key={op.step} className={`p-5 rounded-xl border ${op.color} flex gap-4`}>
             <div className={`font-mono font-bold text-sm mt-0.5 w-28 shrink-0 ${op.label}`}>{op.step}</div>
-            <p className="text-sm text-foreground/80">{op.desc}</p>
+            <p className="text-sm text-muted-foreground dark:text-foreground/80">{op.desc}</p>
           </div>
         ))}
       </div>
@@ -191,7 +186,7 @@ export default function SymmetricPage() {
 
       <div className="not-prose bg-red-500/10 border border-red-500/30 p-5 rounded-xl my-6">
         <h4 className="text-red-400 font-mono font-bold mb-2">⚠️ The ECB Penguin Problem</h4>
-        <p className="text-sm text-foreground/80">
+        <p className="text-sm text-muted-foreground dark:text-foreground/80">
           ECB mode is famously broken — each block is encrypted independently, so identical plaintext blocks produce identical ciphertext blocks. Encrypting an image with ECB reveals the image's shapes and patterns in the ciphertext. Modern systems never use ECB.
         </p>
       </div>
@@ -310,7 +305,7 @@ export default function SymmetricPage() {
             <Lock size={120} />
           </div>
           <h3 className="text-xl font-bold font-mono text-primary mb-4">⚙️ Implementation: Symmetric Studio</h3>
-          <p className="text-sm text-foreground/80 mb-6 font-sans">
+          <p className="text-sm text-muted-foreground dark:text-foreground/80 mb-6 font-sans">
             Our Studio doesn't just encrypt text — it processes <strong>binary streams</strong>. Here is the exact logical pipeline used in the tool:
           </p>
           <div className="space-y-4 relative z-10">
@@ -323,7 +318,7 @@ export default function SymmetricPage() {
               <div key={s.t} className="flex gap-4 items-start">
                 <span className="text-primary font-mono font-bold text-xs">{s.t.split(".")[0]}</span>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-tight text-white/90">{s.t.split(" ")[1]}</p>
+                  <p className="text-xs font-bold uppercase tracking-tight text-foreground/90 dark:text-white/90">{s.t.split(" ")[1]}</p>
                   <p className="text-[10px] text-muted-foreground">{s.d}</p>
                 </div>
               </div>
@@ -400,7 +395,7 @@ export default function SymmetricPage() {
 
       <div className="not-prose bg-primary/5 border border-primary/20 p-5 rounded-xl my-6">
         <h4 className="text-primary font-mono font-bold mb-2">💡 Pro Tip: Hybrid Encryption</h4>
-        <p className="text-sm text-foreground/80">
+        <p className="text-sm text-muted-foreground dark:text-foreground/80">
           In practice, we almost never use just one type. We use <strong>Asymmetric</strong> encryption to safely share a secret key, then switch to <strong>Symmetric</strong> encryption to actually move the data. This combines the security of one with the speed of the other.
         </p>
       </div>

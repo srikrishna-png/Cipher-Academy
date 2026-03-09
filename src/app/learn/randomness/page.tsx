@@ -6,7 +6,7 @@ export default function RandomnessPage() {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center gap-4 mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary font-bold font-mono text-sm border border-primary/30">11</span>
-                <h4 className="text-slate-200 font-mono tracking-widest uppercase m-0">Module 11 — Randomness & Entropy</h4>
+                <h4 className="text-foreground/60 font-mono tracking-widest uppercase m-0">Module 11 — Randomness & Entropy</h4>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-8">The Engine of Chance</h1>
@@ -56,11 +56,11 @@ export default function RandomnessPage() {
                 These are PRNGs that are mathematically proven to be indistinguishable from true randomness.
             </p>
 
-            <div className="not-prose bg-black/40 border border-white/5 p-8 rounded-3xl my-16 relative overflow-hidden group">
+            <div className="not-prose bg-muted/20 dark:bg-black/40 border border-border dark:border-white/5 p-8 rounded-3xl my-16 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                     <Zap size={180} />
                 </div>
-                <h3 className="text-2xl font-bold font-mono text-white mb-6">⚙️ Implementation: Entropy Engine</h3>
+                <h3 className="text-2xl font-bold font-mono text-foreground dark:text-white mb-6">⚙️ Implementation: Entropy Engine</h3>
                 <p className="text-sm text-muted-foreground mb-8">
                     Our Entropy tool calculates <strong>Shannon's Entropy</strong> to measure the information density of your data.
                 </p>
@@ -70,7 +70,7 @@ export default function RandomnessPage() {
                         <div className="flex gap-4">
                             <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 font-bold text-sm">H</div>
                             <div>
-                                <h5 className="font-bold text-sm text-white mb-1">Theoretical Uncertainty</h5>
+                                <h5 className="font-bold text-sm text-foreground dark:text-white mb-1">Theoretical Uncertainty</h5>
                                 <p className="text-[11px] text-muted-foreground leading-relaxed">
                                     We measure bits-per-character. A string of all "AAAAA" has <strong>0 bits</strong> of entropy.
                                     A truly random string has <strong>8 bits</strong> per byte.
@@ -82,17 +82,14 @@ export default function RandomnessPage() {
                     <div className="space-y-4">
                         <h4 className="text-primary font-mono text-xs uppercase font-bold tracking-widest">Logic Flow</h4>
                         <div className="space-y-2">
-                            <div className="flex items-center gap-3 p-2 bg-white/5 rounded border border-white/5">
-                                <span className="text-[10px] font-mono text-primary">01</span>
-                                <span className="text-[10px] text-white">Extract frequency of every unique byte.</span>
-                            </div>
+                            <span className="text-[10px] text-foreground dark:text-white">Extract frequency of every unique byte.</span>
                             <div className="flex items-center gap-3 p-2 bg-white/5 rounded border border-white/5">
                                 <span className="text-[10px] font-mono text-primary">02</span>
-                                <span className="text-[10px] text-white">Apply log2 summation formula.</span>
+                                <span className="text-[10px] text-foreground dark:text-white">Apply log2 summation formula.</span>
                             </div>
                             <div className="flex items-center gap-3 p-2 bg-white/5 rounded border border-white/5">
                                 <span className="text-[10px] font-mono text-primary">03</span>
-                                <span className="text-[10px] text-white">Scale output based on character set.</span>
+                                <span className="text-[10px] text-foreground dark:text-white">Scale output based on character set.</span>
                             </div>
                         </div>
                     </div>
@@ -106,7 +103,7 @@ export default function RandomnessPage() {
 
             <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
                 <div className="p-6 bg-muted/20 border border-border rounded-2xl">
-                    <h4 className="font-bold text-white mb-4">Small Example: Simple Pin</h4>
+                    <h4 className="font-bold text-foreground dark:text-white mb-4">Small Example: Simple Pin</h4>
                     <p className="text-sm text-muted-foreground mb-4">"1234" (4 digits). Only digits used.</p>
                     <div className="h-2 w-full bg-red-500/20 rounded-full overflow-hidden mb-2">
                         <div className="h-full bg-red-500 w-[5%]" />
@@ -118,7 +115,7 @@ export default function RandomnessPage() {
                 </div>
 
                 <div className="p-6 bg-primary/5 border border-primary/20 rounded-2xl">
-                    <h4 className="font-bold text-white mb-4">Large Example: Secure Passphrase</h4>
+                    <h4 className="font-bold text-foreground dark:text-white mb-4">Large Example: Secure Passphrase</h4>
                     <p className="text-sm text-muted-foreground mb-4">"correct-horse-battery-staple" (Complex string).</p>
                     <div className="h-2 w-full bg-primary/20 rounded-full overflow-hidden mb-2">
                         <div className="h-full bg-primary w-[95%]" />
@@ -140,6 +137,6 @@ export default function RandomnessPage() {
                     Next: Steganography <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </Link>
             </div>
-        </div>
+        </div >
     );
 }

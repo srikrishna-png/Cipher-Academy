@@ -4,40 +4,15 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Shield, BookOpen, KeyRound, ChevronRight } from "lucide-react";
+import { X, ChevronRight, KeyRound, Shield, BookOpen } from "lucide-react";
 import { useNav } from "./NavProvider";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { TOOLS_NAV, ACADEMY_NAV } from "@/lib/constants/navigation";
 
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
-
-const TOOLS_LIST = [
-    { href: "/tools/text-crypto", label: "Text Cryptography" },
-    { href: "/tools/steganography", label: "Steganography" },
-    { href: "/tools/file-crypto", label: "File Cryptography" },
-    { href: "/tools/entropy", label: "Password Entropy" },
-    { href: "/tools/generators", label: "Key Generators" },
-    { href: "/tools/jwt-inspector", label: "JWT Inspector" },
-    { href: "/tools/digital-signatures", label: "Digital Signatures" },
-    { href: "/tools/zip-compressor", label: "ZIP Compressor" },
-];
-
-const ACADEMY_LIST = [
-    { href: "/learn/history", label: "History of Ciphers" },
-    { href: "/learn/symmetric", label: "Symmetric Encryption" },
-    { href: "/learn/asymmetric", label: "Asymmetric Encryption" },
-    { href: "/learn/hashing", label: "Hashing Algorithms" },
-    { href: "/learn/steganography", label: "Stego Concepts" },
-    { href: "/learn/randomness", label: "Digital Randomness" },
-    { href: "/learn/keygen", label: "Key Generation" },
-    { href: "/learn/diffie-hellman", label: "Diffie-Hellman" },
-    { href: "/learn/hmac", label: "HMAC & Security" },
-    { href: "/learn/jwt-studio", label: "JWT Studio" },
-    { href: "/learn/digital-signatures", label: "Sig Visualizer" },
-    { href: "/learn/file-conversion", label: "Data Formats" },
-];
 
 export function MobileSidebar() {
     const { isSidebarOpen, closeSidebar } = useNav();
@@ -46,15 +21,18 @@ export function MobileSidebar() {
     const isToolsSection = pathname.startsWith("/tools");
     const isAcademySection = pathname.startsWith("/learn");
 
+    // Flatten academy sections for mobile sidebar
+    const FLATTENED_ACADEMY = ACADEMY_NAV.flatMap(section => section.links);
+
     const currentList = isToolsSection
-        ? { title: "CRYPTO_SUITE", items: TOOLS_LIST, icon: Shield }
+        ? { title: "CRYPTO_SUITE", items: TOOLS_NAV, icon: Shield }
         : isAcademySection
-            ? { title: "ACADEMY_SYLLABUS", items: ACADEMY_LIST, icon: BookOpen }
+            ? { title: "ACADEMY_SYLLABUS", items: FLATTENED_ACADEMY, icon: BookOpen }
             : {
                 title: "NAVIGATION", items: [
-                    { href: "/tools/text-crypto", label: "Tools" },
-                    { href: "/learn/history", label: "Academy" },
-                    { href: "/escape-room", label: "Challenge" }
+                    { href: "/tools/text-crypto", label: "Tools", icon: Shield },
+                    { href: "/learn/history", label: "Academy", icon: BookOpen },
+                    { href: "/escape-room", label: "Challenge", icon: KeyRound }
                 ], icon: KeyRound
             };
 
@@ -115,19 +93,23 @@ export function MobileSidebar() {
                         <nav className="flex flex-col gap-1">
                             {currentList.items.map((link) => {
                                 const isActive = pathname === link.href;
+                                const Icon = link.icon;
                                 return (
                                     <Link
                                         key={link.href}
                                         href={link.href}
                                         onClick={closeSidebar}
                                         className={cn(
-                                            "flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-mono transition-all group",
+                                            "flex items-center justify-between px-3 py-2.5 rounded-md text-sm transition-all group",
                                             isActive
                                                 ? "text-primary bg-primary/5"
                                                 : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                                         )}
                                     >
-                                        <span>{link.label}</span>
+                                        <div className="flex items-center gap-3">
+                                            <Icon className={cn("w-4 h-4", isActive ? "text-primary" : "text-muted-foreground group-hover:text-primary")} />
+                                            <span className="font-medium">{link.label}</span>
+                                        </div>
                                         <ChevronRight className={cn(
                                             "w-4 h-4 opacity-0 -translate-x-2 transition-all",
                                             isActive ? "opacity-100 translate-x-0" : "group-hover:opacity-50 group-hover:translate-x-0"

@@ -1,23 +1,12 @@
 import { Navbar } from "@/components/layout/Navbar";
 import Link from "next/link";
-import { FileText, KeyRound, Lock, ShieldAlert, PenTool, FileJson, FileArchive } from "lucide-react";
+import { TOOLS_NAV } from "@/lib/constants/navigation";
 
 export default function ToolsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const sidebarLinks = [
-    { href: "/tools/text-crypto", label: "Text Encryption", icon: FileText },
-    { href: "/tools/file-crypto", label: "File Conversion", icon: Lock },
-    { href: "/tools/zip-compressor", label: "Zip Compressor", icon: FileArchive },
-    { href: "/tools/digital-signatures", label: "Digital Signatures", icon: PenTool },
-    { href: "/tools/jwt-inspector", label: "JWT Inspector", icon: FileJson },
-    { href: "/tools/steganography", label: "Steganography", icon: ShieldAlert },
-    { href: "/tools/generators", label: "Key Generators", icon: KeyRound },
-    { href: "/tools/entropy", label: "Entropy Tester", icon: ShieldAlert },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen pt-20">
       <Navbar />
@@ -29,7 +18,7 @@ export default function ToolsLayout({
             Crypto Suite
           </h2>
           <nav className="flex flex-col gap-2">
-            {sidebarLinks.map((link) => (
+            {TOOLS_NAV.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

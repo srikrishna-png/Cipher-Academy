@@ -1,52 +1,13 @@
 import { Navbar } from "@/components/layout/Navbar";
 import Link from "next/link";
-import { Book, Cpu, ScrollText, Key, Zap, Shield } from "lucide-react";
+import { Book } from "lucide-react";
+import { ACADEMY_NAV } from "@/lib/constants/navigation";
 
 export default function LearnLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const syllabus = [
-    {
-      title: "Fundamentals",
-      links: [
-        { href: "/learn/history", label: "History & Ciphers", icon: ScrollText },
-      ]
-    },
-    {
-      title: "Integrity & Auth",
-      links: [
-        { href: "/learn/hashing", label: "Hashing Concepts", icon: Cpu },
-        { href: "/learn/hmac", label: "HMAC Deep-Dive", icon: Shield },
-      ]
-    },
-    {
-      title: "Encryption",
-      links: [
-        { href: "/learn/symmetric", label: "Symmetric (AES)", icon: Book },
-        { href: "/learn/file-conversion", label: "File Conversion", icon: Zap },
-        { href: "/learn/asymmetric", label: "Asymmetric (RSA)", icon: Key },
-        { href: "/learn/diffie-hellman", label: "Diffie-Hellman", icon: Zap },
-      ]
-    },
-    {
-      title: "Identity & Tokens",
-      links: [
-        { href: "/learn/digital-signatures", label: "Digital Signatures", icon: Shield },
-        { href: "/learn/jwt-studio", label: "JWT Studio Theory", icon: Cpu },
-        { href: "/learn/keygen", label: "Key Generation", icon: Key },
-      ]
-    },
-    {
-      title: "Advanced",
-      links: [
-        { href: "/learn/randomness", label: "Randomness & Entropy", icon: Zap },
-        { href: "/learn/steganography", label: "Steganography", icon: Shield },
-      ]
-    }
-  ];
-
   return (
     <div className="flex flex-col min-h-screen pt-20">
       <Navbar />
@@ -58,7 +19,7 @@ export default function LearnLayout({
             <Book className="w-4 h-4 text-primary" /> Syllabus
           </h2>
           <nav className="flex flex-col gap-6 overflow-y-auto max-h-[80vh] pb-8 pr-2 custom-scrollbar">
-            {syllabus.map((section) => (
+            {ACADEMY_NAV.map((section) => (
               <div key={section.title} className="space-y-2">
                 <h3 className="px-4 text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em] mb-3">
                   {section.title}

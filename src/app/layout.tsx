@@ -6,6 +6,7 @@ import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
 import { NavProvider } from "@/components/layout/NavProvider";
 import { MobileSidebar } from "@/components/layout/MobileSidebar";
 import { SiteWrapper } from "@/components/layout/SiteWrapper";
+import { BottomNav } from "@/components/layout/BottomNav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,6 +44,7 @@ export default function RootLayout({
                 {children}
               </SmoothScrollProvider>
             </SiteWrapper>
+            <BottomNav />
           </NavProvider>
         </ThemeProvider>
       </body>
